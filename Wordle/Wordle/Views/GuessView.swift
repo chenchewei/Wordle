@@ -23,7 +23,7 @@ struct GuessView: View {
                         maxHeight: .infinity,
                         alignment: .center
                     )
-                    .background(Color.systemBGColor)
+                    .background(Color(UIColor.systemBackground))
                     .font(.system(size: 35, weight: .heavy))
                     .border(Color.secondary)
             }

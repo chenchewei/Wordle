@@ -13,6 +13,7 @@ struct GameView: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: 3, content: {
+                Spacer()
                 GuessView(guess: $dataModel.guesses[0])
                 GuessView(guess: $dataModel.guesses[1])
                 GuessView(guess: $dataModel.guesses[2])
@@ -32,7 +33,7 @@ struct GameView: View {
                 }
                 
                 ToolbarItem(placement: .principal) {
-                    Text("WODLE")
+                    Text("WORDLE")
                         .font(.largeTitle)
                         .fontWeight(.heavy)
                         .foregroundStyle(.primary)
@@ -54,6 +55,14 @@ struct GameView: View {
                     
                 }
             }
+            
+            Spacer()
+            
+            Keyboard()
+                .scaleEffect(Global.keyboardScale)
+                .padding(.top)
+            
+            Spacer()
         }
     }
 }
