@@ -19,6 +19,7 @@
 		052DD6CC2D47753F003B7AD2 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052DD6CB2D47753F003B7AD2 /* Global.swift */; };
 		052DD6CE2D477F3B003B7AD2 /* LetterButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052DD6CD2D477F3B003B7AD2 /* LetterButtonView.swift */; };
 		052DD6D02D478BED003B7AD2 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052DD6CF2D478BED003B7AD2 /* Keyboard.swift */; };
+		052DD6D32D487698003B7AD2 /* Shake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052DD6D22D487698003B7AD2 /* Shake.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		052DD6CB2D47753F003B7AD2 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		052DD6CD2D477F3B003B7AD2 /* LetterButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterButtonView.swift; sourceTree = "<group>"; };
 		052DD6CF2D478BED003B7AD2 /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
+		052DD6D22D487698003B7AD2 /* Shake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shake.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				052DD6C52D475BC6003B7AD2 /* Views */,
 				052DD6C42D475B33003B7AD2 /* Models */,
 				052DD6BF2D475914003B7AD2 /* Extensions */,
+				052DD6D12D48768D003B7AD2 /* Animations */,
 				052DD6B52D4753CE003B7AD2 /* Preview Content */,
 				052DD6B32D4753CE003B7AD2 /* Assets.xcassets */,
 				052DD6BD2D4755C2003B7AD2 /* Launch Screen.storyboard */,
@@ -121,6 +124,14 @@
 				052DD6CB2D47753F003B7AD2 /* Global.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		052DD6D12D48768D003B7AD2 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				052DD6D22D487698003B7AD2 /* Shake.swift */,
+			);
+			path = Animations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,6 +211,7 @@
 				052DD6C32D475A10003B7AD2 /* Guess.swift in Sources */,
 				052DD6D02D478BED003B7AD2 /* Keyboard.swift in Sources */,
 				052DD6C12D47592B003B7AD2 /* Color+.swift in Sources */,
+				052DD6D32D487698003B7AD2 /* Shake.swift in Sources */,
 				052DD6CA2D475D80003B7AD2 /* WordleDataModel.swift in Sources */,
 				052DD6B02D4753CD003B7AD2 /* WordleApp.swift in Sources */,
 				052DD6CC2D47753F003B7AD2 /* Global.swift in Sources */,
