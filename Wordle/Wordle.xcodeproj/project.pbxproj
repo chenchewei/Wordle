@@ -20,6 +20,7 @@
 		052DD6CE2D477F3B003B7AD2 /* LetterButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052DD6CD2D477F3B003B7AD2 /* LetterButtonView.swift */; };
 		052DD6D02D478BED003B7AD2 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052DD6CF2D478BED003B7AD2 /* Keyboard.swift */; };
 		052DD6D32D487698003B7AD2 /* Shake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052DD6D22D487698003B7AD2 /* Shake.swift */; };
+		055E334A2D4909F200DFC18C /* FlipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055E33492D4909F200DFC18C /* FlipView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		052DD6CD2D477F3B003B7AD2 /* LetterButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterButtonView.swift; sourceTree = "<group>"; };
 		052DD6CF2D478BED003B7AD2 /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		052DD6D22D487698003B7AD2 /* Shake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shake.swift; sourceTree = "<group>"; };
+		055E33492D4909F200DFC18C /* FlipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 				052DD6C62D475BF1003B7AD2 /* GuessView.swift */,
 				052DD6CD2D477F3B003B7AD2 /* LetterButtonView.swift */,
 				052DD6CF2D478BED003B7AD2 /* Keyboard.swift */,
+				055E33492D4909F200DFC18C /* FlipView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 				052DD6CE2D477F3B003B7AD2 /* LetterButtonView.swift in Sources */,
 				052DD6B22D4753CD003B7AD2 /* GameView.swift in Sources */,
 				052DD6C72D475BF1003B7AD2 /* GuessView.swift in Sources */,
+				055E334A2D4909F200DFC18C /* FlipView.swift in Sources */,
 				052DD6C32D475A10003B7AD2 /* Guess.swift in Sources */,
 				052DD6D02D478BED003B7AD2 /* Keyboard.swift in Sources */,
 				052DD6C12D47592B003B7AD2 /* Color+.swift in Sources */,
