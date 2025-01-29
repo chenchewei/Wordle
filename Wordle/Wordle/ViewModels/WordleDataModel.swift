@@ -79,7 +79,7 @@ class WordleDataModel: ObservableObject {
             setCurrentGuessColors()
             tryIndex += 1
             currentWord = ""
-            guard tryIndex < 6 else { return }
+            guard tryIndex > 5 else { return }
             gameOver = true
             inPlay = false
             print("You lost")
