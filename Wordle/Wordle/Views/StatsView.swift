@@ -48,7 +48,24 @@ struct StatsView: View {
                         .environmentObject(dataModel)
                 }
             }
-            
+            if dataModel.gameOver {
+                HStack {
+                    Spacer()
+                    
+                    Button {
+                        dataModel.shareResult()
+                    } label: {
+                        HStack {
+                            Image(systemName: "square.and.arrow.up")
+                            Text("Share")
+                        }
+                        .foregroundStyle(Color.white)
+                        .padding(8)
+                        .background(.correct)
+                        .clipShape(.buttonBorder)
+                    }
+                }                
+            }
             Spacer()
         }
         .padding(.horizontal, 40)
