@@ -10,6 +10,7 @@ import SwiftUI
 struct GameView: View {
     @EnvironmentObject var dataModel: WordleDataModel
     @State private var showSettings: Bool = false
+    @State private var showHelp: Bool = false
     
     var body: some View {
         ZStack {
@@ -43,7 +44,7 @@ struct GameView: View {
                             }
                             
                             Button {
-                                
+                                showHelp.toggle()
                             } label: {
                                 Image(systemName: "questionmark.circle")
                             }
@@ -54,7 +55,8 @@ struct GameView: View {
                         Text("WORDLE")
                             .font(.largeTitle)
                             .fontWeight(.heavy)
-                            .foregroundStyle(.primary)
+                            .foregroundStyle(dataModel.isHardMode ? .red : .primary)
+                            .minimumScaleFactor(0.5)
                     }
                     
                     ToolbarItem(placement: .topBarTrailing) {
@@ -79,6 +81,9 @@ struct GameView: View {
             }
             .sheet(isPresented: $showSettings) {
                 SettingsView()
+            }
+            .sheet(isPresented: $showHelp) {
+                HelpView()
             }
             
             if dataModel.showStats {

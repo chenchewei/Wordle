@@ -26,6 +26,7 @@
 		055E33522D4B690700DFC18C /* UIWindow+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055E33512D4B690700DFC18C /* UIWindow+.swift */; };
 		055E33542D4B6C9C00DFC18C /* ColorSchemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055E33532D4B6C9C00DFC18C /* ColorSchemeManager.swift */; };
 		055E33562D4B6D8A00DFC18C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055E33552D4B6D8A00DFC18C /* SettingsView.swift */; };
+		055E33582D4B7C7300DFC18C /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055E33572D4B7C7300DFC18C /* HelpView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		055E33512D4B690700DFC18C /* UIWindow+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+.swift"; sourceTree = "<group>"; };
 		055E33532D4B6C9C00DFC18C /* ColorSchemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSchemeManager.swift; sourceTree = "<group>"; };
 		055E33552D4B6D8A00DFC18C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		055E33572D4B7C7300DFC18C /* HelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 				055E334B2D4A1A1E00DFC18C /* ToastView.swift */,
 				055E334F2D4A23D700DFC18C /* StatsView.swift */,
 				055E33552D4B6D8A00DFC18C /* SettingsView.swift */,
+				055E33572D4B7C7300DFC18C /* HelpView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 				055E334A2D4909F200DFC18C /* FlipView.swift in Sources */,
 				055E334C2D4A1A1E00DFC18C /* ToastView.swift in Sources */,
 				052DD6C32D475A10003B7AD2 /* Guess.swift in Sources */,
+				055E33582D4B7C7300DFC18C /* HelpView.swift in Sources */,
 				052DD6D02D478BED003B7AD2 /* Keyboard.swift in Sources */,
 				052DD6D32D487698003B7AD2 /* Shake.swift in Sources */,
 				052DD6CA2D475D80003B7AD2 /* WordleDataModel.swift in Sources */,

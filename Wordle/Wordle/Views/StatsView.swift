@@ -22,7 +22,7 @@ struct StatsView: View {
                     Image(systemName: "x.circle")
                         .tint(.pink)
                 }
-                .offset(x: 20, y: 10)
+                .offset(x: 15, y: 15)
             }
             
             Text("STATISTIC")
@@ -64,7 +64,7 @@ struct StatsView: View {
                         .background(.correct)
                         .clipShape(.buttonBorder)
                     }
-                }                
+                }
             }
             Spacer()
         }
@@ -73,7 +73,7 @@ struct StatsView: View {
         .background(RoundedRectangle(cornerRadius: 15).fill(Color(.systemBackground)))
         .padding()
         .shadow(radius: 10)
-        .offset()
+//        .offset()
     }
 }
 

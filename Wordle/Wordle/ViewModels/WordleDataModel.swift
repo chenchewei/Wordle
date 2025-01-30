@@ -12,10 +12,12 @@ class WordleDataModel: ObservableObject {
     @Published var incorrectAttempts: [Int] = [Int].init(repeating: 0, count: 6)
     @Published var toastText: String?
     @Published var showStats: Bool = false
+    @AppStorage("hardmode") var isHardMode: Bool = false
     
     var keyColors: [String: Color] = [: ]
     var matchedLetters = [String]()
     var misplacedLetters = [String]()
+    var correctlyPlacedLetters = [String].init(repeating: "-", count: 5)
     var selectedWord: String = ""
     var currentWord: String = ""
     var attemptCount: Int = 0
@@ -23,7 +25,7 @@ class WordleDataModel: ObservableObject {
     var gameOver: Bool = false
     let winToasts: [String] = ["Uncanny", "Magnificent", "Impressive", "Wicked", "Cool", "Phew"]
     var currentStatistic: Statistic = Statistic.loadStat()
-    
+    private let maxAttempt: Int = 6
     var gameStarted: Bool {
         !currentWord.isEmpty || attemptCount > 0
     }
@@ -45,6 +47,7 @@ class WordleDataModel: ObservableObject {
         inPlay = true
         gameOver = false
         attemptCount = 0
+        correctlyPlacedLetters = [String].init(repeating: "-", count: 5)
         print("selectedWord: \(selectedWord)")
     }
     
@@ -79,7 +82,17 @@ class WordleDataModel: ObservableObject {
         }
         
         if verifyWord() {
-            print("Valid")
+            if isHardMode {
+                if let toastString = hardModeCorrectCheck() {
+                    showToast(with: toastString)
+                    return
+                }
+                if let toastString = hardModeMisplacedCheck() {
+                    showToast(with: toastString)
+                    return
+                }
+            }
+            
             setCurrentGuessColors()
             attemptCount += 1
             currentWord = ""
@@ -131,6 +144,7 @@ class WordleDataModel: ObservableObject {
                         misplacedLetters.remove(at: index)
                     }
                 }
+                correctlyPlacedLetters[index] = correctLetter
                 frequency[guessLetter]! -= 1
             }
         }
@@ -167,6 +181,28 @@ class WordleDataModel: ObservableObject {
         }
     }
     
+    // MARK: - Hard Mode
+    func hardModeCorrectCheck() -> String? {
+        let guessLetters = guesses[attemptCount].guessLetters
+        
+        for i in 0...4 where correctlyPlacedLetters[i] != "-" {
+            guard guessLetters[i] != correctlyPlacedLetters[i] else { continue }
+            let formatter = NumberFormatter()
+            formatter.numberStyle = .ordinal
+            return "\(formatter.string(for: i + 1) ?? "") letter must be `\(correctlyPlacedLetters[i])`!"
+        }
+        return nil
+    }
+    
+    func hardModeMisplacedCheck() -> String? {
+        let guessLetters = guesses[attemptCount].guessLetters
+        
+        for letter in misplacedLetters where !guessLetters.contains(letter) {
+            return "Must contain the letter `\(letter)`!"
+        }
+        return nil
+    }
+    
     // MARK: - Toast
     func showToast(with text: String?) {
         withAnimation {
@@ -185,9 +221,16 @@ class WordleDataModel: ObservableObject {
     // MARK: - Share Sheet
     func shareResult() {
         let stat = Statistic.loadStat()
+        let results = guesses.enumerated().compactMap { $0 }
+        var guessString = ""
+        for result in results {
+            if result.0 <= attemptCount {
+                guessString += result.1.results + "\n"
+            }
+        }
         let resultString = """
-Wordle \(stat.games) \(attemptCount < 6 ? "\(attemptCount + 1)/6" : "")
-\(guesses.compactMap { $0.results }.joined(separator: "\n"))
+Wordle \(stat.games) \(attemptCount < maxAttempt ? "\(attemptCount + 1)/\(maxAttempt)" : "")
+\(guessString)
 """
         let activityController = UIActivityViewController(activityItems: [resultString], applicationActivities: nil)
         
